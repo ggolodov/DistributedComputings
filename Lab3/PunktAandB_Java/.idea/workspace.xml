@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1e78cb8e-099c-44fb-b10f-46e5f00ff0b1" name="Default Changelist" comment="" />
+    <list default="true" id="73d4f397-e2e3-4657-8ad5-5a972a043878" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,12 +20,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1WvxHv1aSMaIO4xQArzV8MhEhNW" />
+  <component name="ProjectId" id="1XIwvwqIR1HmcnVQCoifoxgRCoB" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/CompGraphics/ComputerGraphic" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab1" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -39,23 +38,33 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="WinniePooh" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PunktA.WinniePooh" />
-      <module name="Lab2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="PunktA.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+  <component name="RunManager" selected="Application.PunktB">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Lab3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PunktA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PunktA" />
+      <module name="Lab3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PunktB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PunktB" />
+      <module name="Lab3" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WinniePooh" />
+        <item itemvalue="Application.PunktB" />
+        <item itemvalue="Application.PunktA" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -64,15 +73,13 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1e78cb8e-099c-44fb-b10f-46e5f00ff0b1" name="Default Changelist" comment="" />
-      <created>1580043785234</created>
+      <changelist id="73d4f397-e2e3-4657-8ad5-5a972a043878" name="Default Changelist" comment="" />
+      <created>1580747150509</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1580043785234</updated>
-      <workItem from="1580043789117" duration="15918000" />
-      <workItem from="1580318874421" duration="1256000" />
-      <workItem from="1580336552437" duration="2476000" />
-      <workItem from="1580747048296" duration="1646000" />
+      <updated>1580747150509</updated>
+      <workItem from="1580747154714" duration="17451000" />
+      <workItem from="1580923075836" duration="9872000" />
     </task>
     <servers />
   </component>
