@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73d4f397-e2e3-4657-8ad5-5a972a043878" name="Default Changelist" comment="" />
+    <list default="true" id="042d57a0-275c-4a6a-8372-fb7241c7c947" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,11 +20,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1XIwvwqIR1HmcnVQCoifoxgRCoB" />
+  <component name="ProjectId" id="1Xz0urhv1nAsiXoCFPvjPv5HULt" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab1" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -39,23 +38,16 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.PunktB">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Lab3" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PunktA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PunktA" />
-      <module name="Lab3" />
+      <module name="Lab5" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="PunktB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PunktB" />
-      <module name="Lab3" />
+      <module name="Lab5" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -64,7 +56,6 @@
       <list>
         <item itemvalue="Application.PunktB" />
         <item itemvalue="Application.PunktA" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -73,17 +64,27 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="73d4f397-e2e3-4657-8ad5-5a972a043878" name="Default Changelist" comment="" />
-      <created>1580747150509</created>
+      <changelist id="042d57a0-275c-4a6a-8372-fb7241c7c947" name="Default Changelist" comment="" />
+      <created>1582033840133</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1580747150509</updated>
-      <workItem from="1580747154714" duration="17451000" />
-      <workItem from="1580923075836" duration="9872000" />
+      <updated>1582033840133</updated>
+      <workItem from="1582033843140" duration="12760000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/PunktA.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
