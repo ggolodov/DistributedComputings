@@ -3,6 +3,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -11,7 +13,7 @@ public class PunktB {
     static boolean[][] garden = new boolean[gardenSize][gardenSize];
 
     public static void main(String[] argv){
-        ReadWriteLock rwLock = new ReentrantReadWriteLock();
+        ReadWriteLok rwLock = new ReadWriteLok();
         for (int i = 0; i < gardenSize; i++) {
             for (int j = 0; j < gardenSize; j++) {
                 garden[i][j] = true;
@@ -23,10 +25,43 @@ public class PunktB {
        new Monitor2(rwLock).start();
     }
 
-    static class Gardener extends Thread{
-        ReadWriteLock rwLock;
+    static class ReadWriteLok {
+        private AtomicBoolean isWriteLocked;
+        private AtomicBoolean isReadLocked;
 
-        Gardener(ReadWriteLock rwLock){
+        ReadWriteLok(){
+            isWriteLocked = new AtomicBoolean(false);
+            isReadLocked = new AtomicBoolean(false);
+        }
+
+        public synchronized void writeLock(){
+            while (isWriteLocked.get() && isReadLocked.get()){
+
+            }
+            isWriteLocked.set(true);
+        }
+
+        public void writeUnlock()
+        {
+            isWriteLocked.set(false);
+        }
+
+        public synchronized void readLock(){
+            while (isWriteLocked.get()){
+
+            }
+            isReadLocked.set(true);
+        }
+
+        public void readUnlock(){
+            isReadLocked.set(false);
+        }
+    }
+
+    static class Gardener extends Thread{
+        ReadWriteLok rwLock;
+
+        Gardener(ReadWriteLok rwLock){
             this.rwLock = rwLock;
         }
 
@@ -41,14 +76,14 @@ public class PunktB {
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-                        rwLock.writeLock().lock();
+                        rwLock.writeLock();
                         try{
                             if (!garden[i][j]){
                                 garden[i][j] = true;
                                 System.out.println("Gardener fixed plant[" + i + ", " + j + "]");
                             }
                         } finally {
-                            rwLock.writeLock().unlock();
+                            rwLock.writeUnlock();
                         }
 
                     }
@@ -58,9 +93,9 @@ public class PunktB {
     }
 
     static class Nature extends Thread{
-        ReadWriteLock rwLock;
+        ReadWriteLok rwLock;
 
-        Nature(ReadWriteLock rwLock){
+        Nature(ReadWriteLok rwLock){
             this.rwLock = rwLock;
         }
 
@@ -74,23 +109,23 @@ public class PunktB {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                rwLock.writeLock().lock();
+                rwLock.writeLock();
                 try {
                     w = random.nextInt(gardenSize);
                     h = random.nextInt(gardenSize);
                     garden[w][h] = !garden[w][h];
                     System.out.println("Nature changed state of plant[" + w + ", " + h + "]");
                 } finally {
-                    rwLock.writeLock().unlock();
+                    rwLock.writeUnlock();
                 }
             }
         }
     }
 
     static class Monitor1 extends Thread{
-        ReadWriteLock rwLock;
+        ReadWriteLok rwLock;
 
-        Monitor1(ReadWriteLock rwLock){
+        Monitor1(ReadWriteLok rwLock){
             this.rwLock = rwLock;
         }
 
@@ -105,7 +140,7 @@ public class PunktB {
                 String string;
                 while (!interrupted()){
                     sleep(2500);
-                    rwLock.readLock().lock();
+                    rwLock.readLock();
                     try{
                         for (int i = 0; i < gardenSize; i++) {
                             for (int j = 0; j < gardenSize; j++) {
@@ -121,7 +156,7 @@ public class PunktB {
                         }
                         writer.append("\n\n\n");
                     } finally {
-                        rwLock.readLock().unlock();
+                        rwLock.readUnlock();
                     }
                 }
                 writer.close();
@@ -133,9 +168,9 @@ public class PunktB {
     }
 
     static class Monitor2 extends Thread{
-        ReadWriteLock rwLock;
+        ReadWriteLok rwLock;
 
-        Monitor2(ReadWriteLock rwLock){
+        Monitor2(ReadWriteLok rwLock){
             this.rwLock = rwLock;
         }
 
@@ -148,7 +183,7 @@ public class PunktB {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                rwLock.readLock().lock();
+                rwLock.readLock();
                 try {
                     for (int i = 0; i < gardenSize; i++) {
                         for (int j = 0; j < gardenSize; j++) {
@@ -164,7 +199,7 @@ public class PunktB {
                     }
                     System.out.println("\n");
                 } finally {
-                    rwLock.readLock().unlock();
+                    rwLock.readUnlock();
                 }
             }
         }
