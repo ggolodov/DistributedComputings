@@ -2,18 +2,50 @@ import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicIntegerArray;
 
 public class PunktB {
     public static void main(String[] argv){
         AtomicBoolean isDone = new AtomicBoolean(false);
         AtomicIntegerArray symbolCounter = new AtomicIntegerArray(4);
-        CyclicBarrier barrier = new CyclicBarrier(4, new StopSignal(symbolCounter, isDone));
+        Barrier barrier = new Barrier(4, new StopSignal(symbolCounter, isDone));
         new StringChanger(0, barrier, symbolCounter, isDone, "ABCDADA").start();
         new StringChanger(1, barrier, symbolCounter, isDone, "ABCDBCABC").start();
         new StringChanger(2, barrier, symbolCounter, isDone, "ACDCACDADCC").start();
         new StringChanger(3, barrier, symbolCounter, isDone, "ABADBCDBCDACA").start();
     }
+}
+
+class Barrier extends Thread {
+    private int maxCount;
+    private AtomicInteger count;
+    private Runnable runnable;
+    private volatile boolean isDone;
+
+    public Barrier(int maxCount, Runnable runnable)
+    {
+        this.maxCount = maxCount;
+        this.count = new AtomicInteger(0);
+        this.runnable = runnable;
+        this.isDone = false;
+    }
+
+    public void await() throws InterruptedException, BrokenBarrierException{
+        isDone = false;
+        count.incrementAndGet();
+        while (count.get() % maxCount != 0){
+
+        }
+        synchronized (runnable){
+            if (!isDone){
+                isDone = true;
+                new Thread(runnable).start();
+            }
+        }
+    }
+
+
 }
 
 class StopSignal implements Runnable{
@@ -56,13 +88,13 @@ class StopSignal implements Runnable{
 
 class StringChanger extends Thread{
     private int id;
-    private CyclicBarrier barrier;
+    private Barrier barrier;
     private String stringToChange;
     private Random random;
     private AtomicIntegerArray symbolCounter;
     private AtomicBoolean isDone;
 
-    StringChanger(int id, CyclicBarrier barrier, AtomicIntegerArray symbolCounter, AtomicBoolean isDone, String stringToChange){
+    StringChanger(int id, Barrier barrier, AtomicIntegerArray symbolCounter, AtomicBoolean isDone, String stringToChange){
         this.id = id;
         this.barrier = barrier;
         this.symbolCounter = symbolCounter;
@@ -115,6 +147,7 @@ class StringChanger extends Thread{
     public void run() {
         while ( !interrupted()){
             try {
+                sleep(1000);
                 if (isDone.get()){
                     break;
                 }
