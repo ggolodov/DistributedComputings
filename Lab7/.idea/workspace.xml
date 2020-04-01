@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c29965a-8d44-4b92-aeab-e1efede1e084" name="Default Changelist" comment="" />
+    <list default="true" id="0cff68fe-6a6a-40bf-9380-d52f11202599" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,10 +20,14 @@
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1YAhGFggBPSu7GNsQ4VTzaQ7ens" />
+  <component name="ProjectId" id="1YDEijlWT8VyapjDVETooXwExMt" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/DuckHunt-master" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -37,25 +41,33 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Life">
-    <configuration name="Life" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Life" />
-      <module name="Lab6" />
+  <component name="RunManager" selected="Application.DuckHunt2">
+    <configuration name="DuckHunt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DuckHunt" />
+      <module name="Lab7" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Life2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Life2" />
-      <module name="Lab6" />
+    <configuration name="DuckHunt2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DuckHunt2" />
+      <module name="Lab7" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game" />
+      <module name="Lab7" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Life" />
-        <item itemvalue="Application.Life2" />
+        <item itemvalue="Application.DuckHunt2" />
+        <item itemvalue="Application.DuckHunt" />
+        <item itemvalue="Application.Game" />
       </list>
     </recent_temporary>
   </component>
@@ -64,15 +76,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8c29965a-8d44-4b92-aeab-e1efede1e084" name="Default Changelist" comment="" />
-      <created>1582391208997</created>
+      <changelist id="0cff68fe-6a6a-40bf-9380-d52f11202599" name="Default Changelist" comment="" />
+      <created>1582468893265</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1582391208997</updated>
-      <workItem from="1582391212757" duration="17352000" />
-      <workItem from="1582449685782" duration="4655000" />
-      <workItem from="1582456325648" duration="5115000" />
-      <workItem from="1582756532398" duration="1917000" />
+      <updated>1582468893265</updated>
+      <workItem from="1582468896550" duration="28808000" />
+      <workItem from="1582756539052" duration="1198000" />
+      <workItem from="1583059819181" duration="599000" />
+      <workItem from="1583106784339" duration="599000" />
+      <workItem from="1583166574746" duration="13989000" />
+      <workItem from="1583340009694" duration="4062000" />
     </task>
     <servers />
   </component>
