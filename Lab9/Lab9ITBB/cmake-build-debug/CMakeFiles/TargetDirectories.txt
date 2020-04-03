@@ -1,3 +1,0 @@
-D:/RozpObch/Lab9ITBB/cmake-build-debug/CMakeFiles/Lab9ITBB.dir
-D:/RozpObch/Lab9ITBB/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/RozpObch/Lab9ITBB/cmake-build-debug/CMakeFiles/rebuild_cache.dir
